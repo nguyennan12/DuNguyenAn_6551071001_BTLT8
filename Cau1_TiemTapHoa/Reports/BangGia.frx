@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="2026-10-12T10:00:00" ReportInfo.Modified="2026-10-12T10:00:00" ReportInfo.CreatorVersion="2026.2.8.0">
+  <Dictionary>
+    <TableDataSource Name="HangHoa" ReferenceName="HangHoa" DataType="System.Int32" Enabled="true">
+      <Column Name="MaHang" DataType="System.Int32"/>
+      <Column Name="TenHang" DataType="System.String"/>
+      <Column Name="LoaiHang" DataType="System.String"/>
+      <Column Name="DonVi" DataType="System.String"/>
+      <Column Name="GiaBan" DataType="System.Decimal"/>
+      <Column Name="SoLuongTon" DataType="System.Int32"/>
+    </TableDataSource>
+    <Parameter Name="NgayIn" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="75.6">
+      <TextObject Name="TextTitle" Left="9.45" Top="9.45" Width="699.3" Height="28.35" Text="BẢNG GIÁ HÀNG HÓA – TẠP HÓA NHÀ TRƯỜNG UTC2" HorzAlign="Center" VertAlign="Center" Font="Arial, 13pt, style=Bold"/>
+      <TextObject Name="TextNgayIn" Left="9.45" Top="45" Width="699.3" Height="20" Text="Ngày in: [NgayIn]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Italic"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="79.6" Width="718.2" Height="28.35">
+      <TextObject Name="HeaderSTT" Left="75.6" Top="0" Width="47.25" Height="28.35" Border.Lines="All" Fill.Color="LightGray" Text="STT" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="HeaderTenHang" Left="122.85" Top="0" Width="255.15" Height="28.35" Border.Lines="All" Fill.Color="LightGray" Text="Tên hàng" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="HeaderDonVi" Left="378" Top="0" Width="85.05" Height="28.35" Border.Lines="All" Fill.Color="LightGray" Text="Đơn vị" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="HeaderGiaBan" Left="463.05" Top="0" Width="132.3" Height="28.35" Border.Lines="All" Fill.Color="LightGray" Text="Giá bán" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="111.95" Width="718.2" Height="24.57" DataSource="HangHoa">
+      <TextObject Name="DataSTT" Left="75.6" Top="0" Width="47.25" Height="24.57" Border.Lines="All" Text="[Row#]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="DataTenHang" Left="122.85" Top="0" Width="255.15" Height="24.57" Border.Lines="All" Text=" [HangHoa.TenHang]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="DataDonVi" Left="378" Top="0" Width="85.05" Height="24.57" Border.Lines="All" Text="[HangHoa.DonVi]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="DataGiaBan" Left="463.05" Top="0" Width="132.3" Height="24.57" Border.Lines="All" Text="[HangHoa.GiaBan]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="140.52" Width="718.2" Height="28.35">
+      <TextObject Name="FooterPage" Left="9.45" Top="4.7" Width="699.3" Height="18.9" Text="Trang [Page#]/[TotalPages#]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>
